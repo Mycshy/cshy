@@ -1,0 +1,338 @@
+    <!DOCTYPE html>
+<html>
+<head>
+<title>超市花园-用户中心-买到的商品</title>
+<meta charset="utf-8" />
+<link href="../css/css-userCenter.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="head"><!--头部begin-->
+        <div class="head-inner">
+            <div class="head-logo"></div>
+            <a class="head-FisrtPageLink">首页</a>
+            <div class="head-loc">
+                <span class="head-iconLoc"></span>
+                <p class="head-locInfo">中山大学(北校区)留学生公寓</p>
+                <a href="#">[切换地址]</a>
+                <span class="head-iconScope"></span>
+                <p class="head-Scope">1.5公里</p>
+                <a href="#">[修改]</a>
+            </div>
+            <div class="head-user"><!--用户登录状态-->
+                <div class="head-userUnLog"><!--未登录-->
+                    <img src="../img/icon_head.png" alt="头像" />
+                    <button>登录</button>
+                    <span>/</span>
+                    <button>注册</button>
+                </div>
+                <div class="head-userLogining"><!--已登录-->
+                    <img src="../img/test/test_head.jpg" alt="用户头像" />
+                    <a href="#" title="用户名用户名用户名用户名">用户名用户名用户名用户名</a>
+                    <button id="bt-exit"></button>
+                </div>
+            </div>
+        </div>
+    </div><!--头部end-->
+    <div class="container" id="container"><!--中部begin-->
+        <div class="handleList"><!--用户操作栏begin-->
+            <div class="userInfo"><!--用户信息begin-->
+                <img class="userInfo-headImg" src="../img/test/test_head.jpg" alt="" /><!--头像-->
+                <div class="userInfo-decribe">
+                    <p>136*****885</p>
+                    <p>
+                        <img src="../img/icon_userGrade1.png" alt="会员等级" />
+                        <span>铜牌会员</span>
+                    </p>
+                </div>
+            </div><!--用户信息end-->
+            <ul class="menu"> <!--操作菜单begin-->
+                    <li>
+                        <a class="item" href="MyShoppingCart.html">我的购物车</a>
+                    </li>
+                    <li>
+                        <a class="item cur" href="MyBoughtGoods.html">我买到的商品</a>
+                    </li>
+                    <li>
+                        <a class="item" href="MyAssessmentManage.html">评价管理</a>
+                    </li>
+                    <li>
+                        <a class="item" href="MyBookManage.html">预约管理</a>
+                    </li>
+                    <li>
+                        <a class="item" href="MyDiscountInfo.html">优惠信息</a>
+                    </li>
+                    <li>
+                        <p class="menu-close">我的收藏<span></span></p>
+                        <ul class="hide">
+                            <li><a class="item" href="MyGoodsCollect.html">商品收藏</a></li>
+                            <li><a class="item" href="MyShopCollect.html">超市收藏</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="menu-close">退款与维权<span></span></p>
+                        <ul class="hide">
+                            <li><a class="item" href="MyrefundManage.html">退款管理</a></li>
+                            <li><a class="item" href="MyComplaint.html">我的投诉</a></li>
+                            <li><a class="item" href="MyRights.html">我要维权</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p class="menu-close">我的账户<span></span></p>
+                        <ul class="hide">
+                            <li><a class="item" href="MyPersonalInfo.html">个人信息</a></li>
+                            <li><a class="item" href="MyAcountBalance.html">账户金额</a></li>
+                            <li><a class="item" href="MyAcountSafety.html">账户安全</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="item" href="myAddr.html">我的收货地址</a>
+                    </li>
+<!--                    <li>
+                        <a class="item" href="MyRecentlyView.html">最近访问</a>
+                    </li>-->
+            </ul><!--操作菜单end-->
+        </div><!--用户操作栏end-->
+        <div class="content" id="content"><!--内容begin-->
+            <div class="MBG-search"><!--买到的商品搜索栏-->
+                <input type="text" name="MBG-searchInput" placeholder="请输入商品名称/订单号/超市名称" autoautocomplete="off" />
+                <a id="MBG-bt-search"></a>
+                <ul class="MBG-ul-keyWords"><!--关键词列表-->
+                    <li>关键词1</li>
+                    <li>关键词2</li>
+                    <li>关键词3</li>
+                    <li>关键词4</li>
+                    <li>关键词5</li>
+                </ul>
+            </div>
+            <div class="MBG-tabs"><!--tab筛选菜单-->
+                <span class="MBG-tab MBG-tab-cur">全部订单</span>
+                <span class="MBG-tab">待支付</span>
+                <span class="MBG-tab">待配送</span>
+                <span class="MBG-tab">配送中</span>
+                <span class="MBG-tab">待评价</span>
+            </div>
+		  <div class="orders"><!--begin订单-->
+			 <div class="MBG-table-colName">	
+				    <span id="MBG-table-col1">商品</span>
+				    <span id="MBG-table-col2">单价</span>
+				    <span id="MBG-table-col3">数量</span>
+				    <span id="MBG-table-col4">订单总价（元）</span>
+				    <span id="MBG-table-col5">配送方式</span>
+				    <span id="MBG-table-col6">订单状态</span>
+				    <span id="MBG-table-col7">订单操作</span>		
+			</div>
+			<div class="MBG-orders-table">
+				    <div class="MBG-orders-top">
+					   <div class="MBG-orders-top-l">
+                           <span class="MBG-label-orderId">订单号：<a class="MBG-orderId" href="">123456789</a></span>
+						<label class="MBG-label-orderTime">下单时间：<span>2015/05/20</span></label>
+					   </div>
+					   <div class="MBG-orders-top-r">
+                           <img src="../img/test/test_iconshop.png" />
+                           <p class="MBG-shopName"><a href="#" title="点击查看商家信息">华润万家超市（羊城分店)</a></p>
+                           <a class="a-complain bt-hover" href="usercenterNav7RightsPage.html">投诉</a>					
+					   </div>
+                        <span class="MBG-bt-deleteOrder hide" title="取消订单"></span>
+				    </div>
+				    <div class="MBG-table-cont"> <!--1个商品条目时-->
+					   <div class="MBG-table-contL">
+						  <div class="MBG-goods-lis noBorder"><!--边框去掉-->
+                              <a href=""><img class="MBG-goods-img" src="../img/test/test_nywxwyg.jpg"/></a>  <!--商品图片-->
+                              <p class="MBG-goods-info MBG-goods-info1"><a href="">奶油味夏威夷果</a></p>
+                              <p class="MBG-goods-info MBG-goods-info2"><span class="moneyColor">11525.0</span>元/包</p>
+                              <p class="MBG-goods-info MBG-goods-info3">57871</p>
+						  </div>
+					   </div>
+					   <div class="MBG-table-contR">
+						  <p class="MBG-goods-info MBG-goods-info4"><span class="moneyColor">55485787.0</span></p>
+						  <div class="MBG-goods-info MBG-goods-info5">
+							 <p>超市花园配送</p>
+							 <p>货到付款</p>
+						  </div>
+						  <p class="MBG-goods-info MBG-goods-info6"><a href="#" title="查看订单详情">配送中</a></p>
+                          <p class="MBG-goods-info MBG-goods-info7">
+						      <a class="order-refund bt-hover" title="申请退款" >申请退款</a>
+                              <a href="#" class="MBG-payForOrder hide" title="去支付" >去支付</a>
+                              <a href="#" class="MBG-goToAssess hide" title="去评价" >去评价</a>
+                           </p>
+                        </div>
+				    </div>		
+			 </div>
+			<div class="MBG-orders-table">
+				    <div class="MBG-orders-top">
+					   <div class="MBG-orders-top-l">
+                           <span class="MBG-label-orderId">订单号：<a class="MBG-orderId" href="">123456789</a></span>
+						<label class="MBG-label-orderTime">下单时间：<span>2015/05/20</span></label>
+					   </div>
+					   <div class="MBG-orders-top-r">
+                           <img src="../img/test/test_iconshop.png" />
+                           <p class="MBG-shopName"><a href="#" title="点击查看商家信息">华润万家超市（羊城分店)</a></p>
+                           <a class="a-complain bt-hover" href="usercenterNav7RightsPage.html">投诉</a>					
+					   </div>
+                        <span class="MBG-bt-deleteOrder hide" title="取消订单"></span>
+				    </div>
+				    <div class="MBG-table-cont"> <!--1个商品条目时-->
+					   <div class="MBG-table-contL">
+						  <div class="MBG-goods-lis noBorder"><!--边框去掉-->
+                              <a href=""><img class="MBG-goods-img" src="../img/test/test_nywxwyg.jpg"/></a>  <!--商品图片-->
+                              <p class="MBG-goods-info MBG-goods-info1"><a href="">奶油味夏威夷果</a></p>
+                              <p class="MBG-goods-info MBG-goods-info2"><span class="moneyColor">11525.0</span>元/包</p>
+                              <p class="MBG-goods-info MBG-goods-info3">57871</p>
+						  </div>
+					   </div>
+					   <div class="MBG-table-contR">
+						  <p class="MBG-goods-info MBG-goods-info4"><span class="moneyColor">55485787.0</span></p>
+						  <div class="MBG-goods-info MBG-goods-info5">
+							 <p>超市花园配送</p>
+							 <p>货到付款</p>
+						  </div>
+						  <p class="MBG-goods-info MBG-goods-info6"><a href="#" title="查看订单详情">待评价</a></p>
+                          <p class="MBG-goods-info MBG-goods-info7">
+						      <a class="order-refund bt-hover" title="申请退款" >申请退款</a>
+                              <a href="#" class="MBG-payForOrder hide" title="去支付" >去支付</a>
+                              <a href="#" class="MBG-goToAssess" title="去评价" >去评价</a>
+                           </p>
+                        </div>
+				    </div>		
+			 </div>
+			 <div class="MBG-orders-table">
+				    <div class="MBG-orders-top">
+					   <div class="MBG-orders-top-l">
+						  <span class="MBG-label-orderId">订单号：<a class="MBG-orderId" href="">123456789</a></span>
+						  <label class="MBG-label-orderTime">下单时间：<span>2015/05/20</span></label>
+					   </div>
+					   <div class="MBG-orders-top-r">
+						  <img src="../img/test/test_iconshop.png" />
+						  <p class="MBG-shopName"><a href="#" title="点击查看商家信息">华润万家超市（羊城分店)</a></p>
+						  <a class="a-complain bt-hover" href="usercenterNav7RightsPage.html">投诉</a>	
+					   </div>
+                        <span class="MBG-bt-deleteOrder" title="取消订单"></span>
+				    </div>
+				    <div class="MBG-table-cont"> <!--多个商品条目-->
+					   <div class="MBG-table-contL">
+						  <div class="MBG-goods-lis">
+							 <a href=""><img class="MBG-goods-img" src="../img/test/test_nywxwyg.jpg"/></a>  <!--商品图片-->
+							 <p class="MBG-goods-info MBG-goods-info1"><a href="">奶油味夏威夷果奶油味夏威夷果奶油味夏威</a></p>
+							 <p class="MBG-goods-info MBG-goods-info2"><span class="moneyColor">11525.0</span>元/包</p>
+							 <p class="MBG-goods-info MBG-goods-info3">57871</p>
+						  </div>
+						  <div class="MBG-goods-lis">
+							 <a href=""><img class="MBG-goods-img" src="../img/test/test_nywxwyg.jpg"/></a>  <!--商品图片-->
+							 <p class="MBG-goods-info MBG-goods-info1"><a href="">奶油味夏威夷果</a></p>
+							 <p class="MBG-goods-info MBG-goods-info2"><span class="moneyColor">11525.0</span>元/包</p>
+							 <p class="MBG-goods-info MBG-goods-info3">57871</p>
+						  </div>
+						  <div class="MBG-goods-lis">
+							 <a href=""><img class="MBG-goods-img" src="../img/test/test_nywxwyg.jpg"/></a>  <!--商品图片-->
+							 <p class="MBG-goods-info MBG-goods-info1"><a href="">奶油味夏威夷果</a></p>
+							 <p class="MBG-goods-info MBG-goods-info2"><span class="moneyColor">11525.0</span>元/包</p>
+							 <p class="MBG-goods-info MBG-goods-info3">57871</p>
+						  </div>
+					   </div>
+					   <div class="MBG-table-contR">
+						  <p class="MBG-goods-info MBG-goods-info4"><span class="moneyColor">55485787.0</span></p>
+						  <div class="MBG-goods-info MBG-goods-info5">
+							 <p>超市花园配送</p>
+							 <p>货到付款</p>
+						  </div>
+						  <p class="MBG-goods-info MBG-goods-info6"><a href="#" title="查看订单详情">待支付</a></p>
+                          <p class="MBG-goods-info MBG-goods-info7">
+						      <a class="order-refund hide bt-hover" title="申请退款" >申请退款</a>
+                              <a href="#" class="MBG-payForOrder" title="去支付" >去支付</a>
+                              <a href="#" class="MBG-goToAssess hide" title="去评价" >去评价</a>
+                           </p>
+                        </div>
+				    </div>		
+			 </div>
+		  </div><!--end订单-->
+		  <div class="refundApply" id="refundApply"> <!--begin退款申请-->
+			 <div class="refundApply-top">申请退款</div>
+			 <table class="table-refundAplly">
+				    <tr><!--订单号-->
+					   <td class="nav2-refund-label">
+						  <p class="nav2-refund-label1">订单号：</p>
+					   </td>
+					   <td>
+						  <p class="av2-refund-orderId"><a href="#" id="av2-refund-orderId">123456789123456789</a></p>
+					   </td>
+				    </tr>
+				    <tr><!--商品-->
+					   <td class="nav2-refund-label">
+						  <p class="nav2-refund-label2">退款商品：</p>
+					   </td>
+					   <td id="nav2-reGo-li">
+						  <tt>
+							 <img src="../img/test.jpg" class="nav2-refundGoodsImg" />
+							 <p class="nav2-refundGoodsInfo">奶油味夏威夷果×2</p>
+						  </tt>
+						  <tt>
+							<img src="../img/test.jpg" class="nav2-refundGoodsImg" />
+							<p class="nav2-refundGoodsInfo">奶油味夏威夷果×2</p>
+						  </tt>
+					   </td>
+				    </tr>
+				    <tr><!--总价-->
+					   <td class="nav2-refund-label">
+						  <p class="nav2-refund-label3">总价：</p>
+					   </td>
+					   <td>
+						  <p class="av2-refund-sumOfCost">￥<span id="nav2-refCost">1660.00</span></p>
+					   </td>
+				    </tr>
+				    <tr><!--退款原因-->
+					   <td class="nav2-refund-label">
+						  <p class="nav2-refund-label4">退款原因：</p>
+					   </td>
+					   <td>
+						  <textarea class="input-refundReason" placeholder="请填写您退款的原因,如描述不符、质量问题等"></textarea>
+					   </td>
+				    </tr>
+				    <tr><!--附件-->
+					   <td class="nav2-refund-label">
+						  <p class="nav2-refund-label5">附件：</p>
+						  <span class="small-labelFile">（有图有真相）</span>
+					   </td>
+					   <td>
+						  <input type="file"  />
+					   </td>
+				    </tr>
+			     </table>
+			     <div>
+				    <button class="bt-apllyRef">提交</button>
+				    <button class="bt-cancelApply">取消</button>
+			     </div>
+		      </div><!--end退款申请-->
+        </div><!--内容end-->
+    </div><!--中部end-->
+    <div class="footer"><!--页脚begin-->
+	   <p class="footer-p1">
+		  <a href="#" title="购物指南">购物指南</a>
+          <a href="#" title="支付方式">支付方式</a>
+		  <a href="#" title="订单服务">订单服务</a>
+		  <a href="#" title="配送方式">配送方式</a>
+		  <a href="#" title="退换货">退换货</a>
+	   </p>
+	   <p class="footer-p2">
+		  <a href="#" title="超市花园简介">超市花园简介</a>
+		  <a href="#" title="Inverstor Relations">Inverstor Relations</a>
+		  <a href="#" title="诚征英才">诚征英才</a>
+    		<a href="#" title="网站联盟">网站联盟</a>
+		  <a href="#" title="广告服务">广告服务</a>
+		  <a href="#" title="超市花园招商">超市花园招商</a>
+		  <a href="#" title="手机超市花园">手机超市花园</a>
+		  <a href="#" title="官方blog">官方blog</a>
+	   </p>
+	   <div class="footer-bottom">
+		  <img class="logo-footer" src="../img/logo_01.png" alt="超市花园"/>
+		  <div class="CopyRight">
+			 <p>Copyright(C)超市花园网2004-2014,All Rights Reserved</p>
+			 <p><a href="#">京ICP证041189号</a></p>
+		  </div>
+    		<div class="footer-bt-sina"><a href="#"></a></div>
+		  <div class="footer-bt-weixin"><a href="#"></a></div>
+	   </div>
+    </div><!--页脚end-->
+</body>
+<script src="../js/jquery/jquery.min.js"></script>
+<script src="../js/js-userCenter.js"></script>
+</html>
